@@ -12,8 +12,10 @@ import retrofit2.http.GET
 import retrofit2.http.Headers
 import retrofit2.http.Path
 
+
+
 class Constants {
-    static final String API_KEY = "Authentication: <Get this token from Allan>"
+    static final String API_KEY = "Authentication:<api-key>"
 }
 
 interface TrackRPurchasesService {
@@ -23,7 +25,7 @@ interface TrackRPurchasesService {
 }
 
 Retrofit retrofit = new Retrofit.Builder()
-        .baseUrl("<Get this URL from Allan>")
+        .baseUrl("<url>")
         .build()
 
 TrackRPurchasesService service = retrofit.create(TrackRPurchasesService.class)
@@ -31,5 +33,11 @@ Call<ResponseBody> purchasesCall = service.getPurchases(4)
 
 Response<ResponseBody> response = purchasesCall.execute()
 
-println response.code()
-println response.body().string()
+def body = response.body().string()
+def lines = body.split(/\s+/)
+
+for (line in lines) {
+    def fields = line.replace('"','').split(/,/)
+    println fields[0] + "##" + fields[0]
+}
+
