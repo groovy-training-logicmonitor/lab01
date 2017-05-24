@@ -89,3 +89,8 @@ We can now push the commit from the last step upto GitHub. Right click on the pr
 
 ## Step 9. Creating the pull request
 
+Go to the lab repository on GitHub at https://github.com/groovy-training-logicmonitor/lab01. Your branch should be visible just above the the file listing. If you don't, ask me, and I'll point you where to go. If you do see your branch, click on the *Compare & Pull request*. You'll be taken to the next screen and you just need to click the *Create pull request* button and your done. 
+
+## Step 10. Profitting
+
+That's it your done. We'll go through all the pull requests, leave some comments and then pick our favorite to merge into the `master` branch.
